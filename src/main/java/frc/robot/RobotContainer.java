@@ -81,9 +81,9 @@ public class RobotContainer {
     SmartDashboard.putNumber("Turn Speed", 0.5);
     SmartDashboard.putData("Turn X Degrees", new TurnDegrees(SmartDashboard.getNumber("Turn Degrees", 90), SmartDashboard.getNumber("Turn Speed", 0.5), m_drivetrain));
     
-    SmartDashboard.putNumber("Straight Speed", 0.5);
-    SmartDashboard.putNumber("Straight Distance", 18);
-    SmartDashboard.putData("Straight X Distance", new DriveDistance(SmartDashboard.getNumber("Straight Speed", 0.5), SmartDashboard.getNumber("Straight Distance", 18), m_drivetrain));
+    SmartDashboard.putNumber("DriveStraight Speed", 0.5);
+    SmartDashboard.putNumber("DriveStraight Distance", 18);
+    SmartDashboard.putData("Drive X Distance", new DriveDistance(SmartDashboard.getNumber("DriveStraight Speed", 0.5), SmartDashboard.getNumber("DriveStraight Distance", 18), m_drivetrain));
 
     SmartDashboard.putData(m_chooser);
 
