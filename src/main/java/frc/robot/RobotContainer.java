@@ -83,7 +83,7 @@ public class RobotContainer {
     
     SmartDashboard.putNumber("Straight Speed", 0.5);
     SmartDashboard.putNumber("Straight Distance", 18);
-    SmartDashboard.putData("Straight x Distance", new DriveDistance(SmartDashboard.getNumber("Straight Speed", 0.5), SmartDashboard.getNumber("Straight Distance", 18), m_drivetrain));
+    SmartDashboard.putData("Straight X Distance", new DriveDistance(SmartDashboard.getNumber("Straight Speed", 0.5), SmartDashboard.getNumber("Straight Distance", 18), m_drivetrain));
 
     SmartDashboard.putData(m_chooser);
 
