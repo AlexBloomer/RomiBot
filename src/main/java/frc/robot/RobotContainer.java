@@ -78,6 +78,11 @@ public class RobotContainer {
     // auto selection widget
     m_chooser.setDefaultOption("Auto Routine Distance", new AutonomousDistance(m_drivetrain));
     m_chooser.addOption("Auto Routine Time", new AutonomousTime(m_drivetrain));
+    SmartDashboard.putNumber("Degrees", 90);
+    SmartDashboard.putNumber("Speed", 0.5);
+
+    SmartDashboard.putData("Turn Degrees", new TurnDegrees(SmartDashboard.getNumber("Degrees", 90), SmartDashboard.getNumber("Speed", 0.5), m_drivetrain));
+    
     SmartDashboard.putData(m_chooser);
 
     // testing for autos and trajectories
