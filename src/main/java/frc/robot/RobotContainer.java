@@ -8,8 +8,6 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.ArcadeDrive;
-import frc.robot.commands.AutonomousDistance;
-import frc.robot.commands.AutonomousTime;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.OnBoardIO;
 import frc.robot.subsystems.OnBoardIO.ChannelMode;
@@ -80,15 +78,28 @@ public class RobotContainer {
   }
 
   private void configureShuffleboard() {
+
+    int turnAngle = 90;
+    double turnSpeed = 0.5;
+
+    int driveDistance = 18;
+    double driveSpeed = 0.5;
+
     // auto selection widget
-    m_chooser.setDefaultOption("Auto Routine Distance", new AutonomousDistance(m_drivetrain));
-    m_chooser.addOption("Auto Routine Time", new AutonomousTime(m_drivetrain));
-    SmartDashboard.putData(m_chooser);
+    // m_chooser.setDefaultOption("Auto Routine Distance", new AutonomousDistance(m_drivetrain));
+    // m_chooser.addOption("Auto Routine Time", new AutonomousTime(m_drivetrain));
+    // SmartDashboard.putData(m_chooser);
 
-    // testing for autos and trajectories
-    SmartDashboard.putData("DriveForward", new  DriveDistance(0.5, 10, m_drivetrain));  // Drives forward at half speed for 10 inches
+    // Turn info
+    SmartDashboard.putNumber("Turn Angle", turnAngle);
+    SmartDashboard.putNumber("Turn Speed", turnSpeed);
+    SmartDashboard.putData("TurnDegrees", new  TurnDegrees(turnSpeed, turnAngle, m_drivetrain));
 
-    // test to see if I can write on master
+    // Drive info
+    SmartDashboard.putNumber("Drive Distance", driveDistance);
+    SmartDashboard.putNumber("Drive Speed", driveSpeed);
+    SmartDashboard.putData("DriveDistance", new DriveDistance(SmartDashboard.getNumber("Drive Speed", driveSpeed), SmartDashboard.getNumber("Drive Distance", driveDistance), m_drivetrain));
+
   }
 
   /**
