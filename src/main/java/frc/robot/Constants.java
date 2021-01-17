@@ -34,6 +34,10 @@ public final class Constants {
 
 
     }
+
+    public static final class OIConstants {
+        public static final int usbxBoxController = 0; // GET VALUE OF PORT FROM DRIVER STATION
+    }
     
 
 

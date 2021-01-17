@@ -19,6 +19,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.PrintCommand;
 import edu.wpi.first.wpilibj2.command.button.Button;
 import frc.robot.commands.*;
+import static frc.robot.Constants.OIConstants.*;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -47,6 +48,10 @@ public class RobotContainer {
   // - PWM 3 (mapped to Arduino Pin 22)
   //
   // Your subsystem configuration should take the overlays into account
+
+  // Setting up xBox Controller
+  XboxController xBoxController = new XboxController(usbxBoxController);
+
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
