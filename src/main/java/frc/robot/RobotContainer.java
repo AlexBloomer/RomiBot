@@ -7,9 +7,6 @@ package frc.robot;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
-import frc.robot.commands.ArcadeDrive;
-import frc.robot.commands.AutonomousDistance;
-import frc.robot.commands.AutonomousTime;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.OnBoardIO;
 import frc.robot.subsystems.OnBoardIO.ChannelMode;
@@ -78,11 +75,16 @@ public class RobotContainer {
     // auto selection widget
     m_chooser.setDefaultOption("Auto Routine Distance", new AutonomousDistance(m_drivetrain));
     m_chooser.addOption("Auto Routine Time", new AutonomousTime(m_drivetrain));
-    SmartDashboard.putNumber("Degrees", 90);
-    SmartDashboard.putNumber("Speed", 0.5);
 
-    SmartDashboard.putData("Turn Degrees", new TurnDegrees(SmartDashboard.getNumber("Degrees", 90), SmartDashboard.getNumber("Speed", 0.5), m_drivetrain));
+    // Turning
+    SmartDashboard.putNumber("Turn Degrees", 90);
+    SmartDashboard.putNumber("Turn Speed", 0.5);
+    SmartDashboard.putData("Turn Degrees", new TurnDegrees(SmartDashboard.getNumber("Turn Degrees", 90), SmartDashboard.getNumber("Turn Speed", 0.5), m_drivetrain));
     
+    SmartDashboard.putNumber("Straight Speed", 0.5);
+    SmartDashboard.putNumber("Straight Distance", 18);
+    SmartDashboard.putData("Turn Degrees", new DriveDistance(SmartDashboard.getNumber("Straight Speed", 0.5), SmartDashboard.getNumber("Straight Distance", 18), m_drivetrain));
+
     SmartDashboard.putData(m_chooser);
 
     // testing for autos and trajectories
